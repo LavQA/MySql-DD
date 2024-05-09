@@ -2,6 +2,24 @@ import mysql.connector
 
 con=mysql.connector.connect(host='   ', port= '    ', user='    ', passw='      ', database='    ') # taking access to/from DB
 curs =con.cursor #create cursor - temperory connection btw py and SQL
-curs.execute("insert into student values(104, 'Kim') #execute through cursor
+curs.execute("insert into student values(104, 'Kim')     #execute through cursor
 con.commit() #commit the transaction
 con.close()
+
+
+*****Storing the query in the begining of the commands****
+
+insert_query = "insert into student values (104, 'Kim')"
+update_query = "update student set sname = 'Lav' where sid= 104 "
+delete_query = "delete from student sname = 'Lav'"
+
+import mysql.connector
+
+con=mysql.connector.connect(host='   ', port= '    ', user='    ', passw='      ', database='    ') # taking access to/from DB
+curs =con.cursor #create cursor - temperory connection btw py and SQL
+curs.execute(insert_query)     #execute through cursor
+con.commit() #commit the transaction
+con.close()
+
+
+
